@@ -73,4 +73,4 @@ jobs:
       - name: Run Laravel production tasks
         run: |
           ssh -p "${{ secrets.CLOUDWAYS_SSH_PORT || 22 }}" "${{ secrets.CLOUDWAYS_SSH_USER }}@${{ secrets.CLOUDWAYS_SSH_HOST }}" \
-            "cd '${{ secrets.CLOUDWAYS_DEPLOY_PATH }}' && php artisan migrate --force && php artisan storage:link || true; php artisan optimize"
+            "cd '${{ secrets.CLOUDWAYS_DEPLOY_PATH }}' && php artisan migrate --force && php artisan storage:link && php artisan optimize"
