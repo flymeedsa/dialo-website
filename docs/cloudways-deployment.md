@@ -40,10 +40,9 @@ Add these repository secrets before enabling the workflow:
 - `CLOUDWAYS_SSH_PRIVATE_KEY`: a dedicated deploy key
 - `CLOUDWAYS_DEPLOY_PATH`: the absolute path of this application's release root
 
-The workflow is `.github/workflows/deploy-cloudways.yml`. It runs on pushes to
-`main` and can also be started manually. It installs production PHP packages,
-builds Vite assets, uploads only to the configured application path, runs
-migrations with `--force`, creates the storage link, and optimizes Laravel.
+Cloudways' native `Deployment via GIT` screen is used to pull the `main` branch
+from GitHub into this application. The repository's CI workflow verifies PHP
+dependencies, tests, and the Vite build before changes are merged to `main`.
 
 ## Future update path
 
