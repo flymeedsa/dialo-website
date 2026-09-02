@@ -38,6 +38,9 @@ jobs:
           composer install --no-interaction --prefer-dist
           pnpm install --frozen-lockfile
 
+      - name: Build frontend assets
+        run: pnpm build
+
       - name: Prepare test environment
         run: |
           cp .env.local.example .env
@@ -48,6 +51,3 @@ jobs:
 
       - name: Run tests
         run: php artisan test
-
-      - name: Build frontend assets
-        run: pnpm build
