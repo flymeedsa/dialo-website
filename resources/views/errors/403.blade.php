@@ -1,0 +1,1 @@
+@extends('layouts.public') @section('title','403 — Dialo') @section('content')<section class="error-page"><div><span class="eyebrow">403</span><h1>{{ app()->getLocale()==='ar'?'غير مصرح لك':'Access denied' }}</h1><a class="button primary" href="{{ route(app()->getLocale().'.home') }}">{{ __('messages.nav.home') }}</a></div></section>@endsection

@@ -1,0 +1,6 @@
+@extends('layouts.public')
+@section('title', __('messages.nav.help').' — Dialo')
+@section('content')
+<section class="page-hero inner-page-hero help-hero"><div class="container narrow"><span class="eyebrow">DIALO SUPPORT</span><h1>{{ __('messages.nav.help') }}</h1><p>{{ app()->getLocale()==='ar'?'ابحث عن إجابة أو تصفح موضوعات المساعدة.':'Search for an answer or browse help topics.' }}</p><form class="search-form help-search" method="get"><label class="sr-only" for="q">{{ app()->getLocale()==='ar'?'ابحث في المساعدة':'Search help' }}</label><input id="q" name="q" value="{{ $term }}" placeholder="{{ app()->getLocale()==='ar'?'ابحث عن إجابة...':'Search for an answer...' }}"><button class="button primary">{{ app()->getLocale()==='ar'?'بحث':'Search' }}</button></form></div></section>
+<section class="section inner-content-section"><div class="container help-grid">@foreach($categories as $category)<section class="help-card"><span class="approved-icon"><x-site-icon name="help" /></span><h2>{{ $category->localized('name') }}</h2><ul>@forelse($category->articles as $article)<li><a href="{{ route(app()->getLocale().'.help.show',$article->slug) }}">{{ $article->localized('title') }} <span>→</span></a></li>@empty<li class="muted">{{ app()->getLocale()==='ar'?'لا توجد نتائج.':'No matching articles.' }}</li>@endforelse</ul></section>@endforeach</div></section>
+@endsection

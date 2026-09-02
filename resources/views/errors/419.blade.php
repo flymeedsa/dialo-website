@@ -1,0 +1,1 @@
+@extends('layouts.public') @section('title','419 — Dialo') @section('content')<section class="error-page"><div><span class="eyebrow">419</span><h1>{{ app()->getLocale()==='ar'?'انتهت صلاحية الجلسة':'Session expired' }}</h1><p>{{ app()->getLocale()==='ar'?'حدّث الصفحة وحاول مجددًا.':'Refresh the page and try again.' }}</p></div></section>@endsection

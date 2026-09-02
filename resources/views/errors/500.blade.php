@@ -1,0 +1,1 @@
+@extends('layouts.public') @section('title','500 — Dialo') @section('content')<section class="error-page"><div><span class="eyebrow">500</span><h1>{{ app()->getLocale()==='ar'?'تعذر إكمال الطلب':'Something went wrong' }}</h1><p>{{ app()->getLocale()==='ar'?'جرّب مرة أخرى بعد قليل.':'Please try again shortly.' }}</p></div></section>@endsection
